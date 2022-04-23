@@ -6,19 +6,17 @@ const router = express.Router();
 router.get('/', function (req, res, next) {
 
   const query = req.query;
-  const { lng, lat } = query
-  const limit = 50
+  const { lng, lat, limit} = query
 
   const url = new URL('https://maps.nextbike.net/maps/nextbike.json?city=192,394');
-  if (!lat || !lng) {
+  if (!lat || !lng || !limit) {
     res.sendStatus(400)
     res.end()
   } else {
     url.searchParams.append('lng', lng)
     url.searchParams.append('lat', lat)
-    url.searchParams.append('limit', limit.toString())
+    url.searchParams.append('limit', limit)
 
-    console.log(url.toString())
 
     axios({
       method: 'get',
@@ -38,7 +36,7 @@ router.get('/', function (req, res, next) {
       else {
         res.json({})
       }
-    });
+    }).catch((err) => console.log(err));
   }
 });
 
