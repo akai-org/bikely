@@ -7,7 +7,7 @@ const NavBar = ({}) => {
     const [destinationValue, setDestinationValue] = useState()
 
     return <div className={styles.navbarContainer}>
-        <div>
+        <div className={styles.icon}>
             <AiOutlineMenu />
         </div>
         <div>

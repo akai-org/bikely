@@ -1,7 +1,20 @@
 .navbarContainer{
-    display: block;
+    display: flex;
+    flex-direction: row;
     background-color: #c6ffaa;
     height: 100px;
     width: 100vw;
+    box-shadow: 0px 2px 2px 0px rgba(66, 68, 90, 0.18);
+    justify-content: center;
+    align-items: center;
+}
+
+.icon{
+    font-size: 16px;
+    padding: 3px;
+    background-color: #cacaca;
+    border: 1px solid black;
+    border-radius: 20%;
+    height: 23px;
     box-shadow: 0px 2px 2px 0px rgba(66, 68, 90, 0.18);
 }
